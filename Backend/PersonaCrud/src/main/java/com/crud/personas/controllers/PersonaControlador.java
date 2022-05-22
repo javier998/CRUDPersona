@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.crud.personas.controllers;
 
 import com.crud.personas.entity.models.Persona;
-import com.crud.personas.service.IPersonaService;
+import com.crud.personas.entity.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,29 +19,36 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PersonaControlador {
 
+    //Inyeccion
     @Autowired
     IPersonaService objIPersonaService;
-        
+      
+    //obtencion de todas las personas con la URI
     @GetMapping("/personas")
     public List<Persona> getAllPersona(){
         return objIPersonaService.getAll();
     }
     
+    //Obtencion de una persona con la URI + varibale "cedula"
     @GetMapping("/persona/{cedula}")
     public Persona getOne(@PathVariable(value = "cedula") String cedula){
         return objIPersonaService.get(cedula);
     }
     
+    //Agregar un objeto de tipo pesona con la uri
     @PostMapping("/persona")
     public void add(Persona persona){
         objIPersonaService.post(persona);
     }
     
-    @PutMapping("/persona")
-    public void update(Persona persona, String cedula){
+    
+    //Actulizacion de una persona con la uri + variable "cedula"
+    @PutMapping("/persona/{cedula}")
+    public void update(Persona persona,@PathVariable(value = "cedula") String cedula){
         objIPersonaService.put(persona,cedula);
     }
     
+    //Eliminacion de una persona con la uri + variable "cedula"
     @DeleteMapping("/persona/{cedula}")
     public void update(@PathVariable(value = "cedula") String cedula){
         objIPersonaService.delete(cedula);
