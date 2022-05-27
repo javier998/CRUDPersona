@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,7 +41,8 @@ public class PersonaControlador {
     
     //Agregar un objeto de tipo pesona con la uri
     @PostMapping("/persona")
-    public void add(Persona persona){
+    public void add(@RequestBody Persona persona){
+        System.out.println(persona.toString());
         objIPersonaService.post(persona);
     }
     

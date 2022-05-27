@@ -1,9 +1,9 @@
 export class Persona {
 
-    cedula: string | undefined;
-    nombres: string | undefined;
-    apellidos: string | undefined;
-    correo: string | undefined;
+    cedula: Text | undefined;
+    nombres: Text | undefined;
+    apellidos: Text | undefined;
+    correo: Text | undefined;
     telefono: number | undefined;
 
 }

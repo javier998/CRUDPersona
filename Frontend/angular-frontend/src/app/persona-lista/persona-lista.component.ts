@@ -20,6 +20,7 @@ export class PersonaListaComponent implements OnInit {
   private getPersonas(){
     this.personaService.getpersonasList().subscribe(data =>{
       this.personas = data;
+      console.log(data);
     });
   }
 }

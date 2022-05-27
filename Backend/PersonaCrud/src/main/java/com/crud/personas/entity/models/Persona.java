@@ -1,6 +1,7 @@
 package com.crud.personas.entity.models;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -22,6 +23,8 @@ public class Persona  implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @Id
+    @Basic(optional = false)
+    @Column(name = "cedula",unique=true, nullable = false)
     String cedula;
     
     @Column
@@ -85,6 +88,11 @@ public class Persona  implements Serializable{
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "cedula=" + cedula + ", nombres=" + nombres + '}';
     }
     
     

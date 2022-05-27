@@ -35,6 +35,7 @@ public class PersonaServiceImpl implements IPersonaService{
     //Agrega un onjetos de tipo persona
     @Override
     public void post(Persona persona) {
+        System.out.println("implementado: "+ persona.toString());
         objIPersonaDao.save(persona);
     }
 
