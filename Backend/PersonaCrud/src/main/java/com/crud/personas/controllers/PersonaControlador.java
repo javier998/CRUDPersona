@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class PersonaControlador {
 
     //Inyeccion
@@ -49,7 +49,7 @@ public class PersonaControlador {
     
     //Actulizacion de una persona con la uri + variable "cedula"
     @PutMapping("/persona/{cedula}")
-    public void update(Persona persona,@PathVariable(value = "cedula") String cedula){
+    public void update(@RequestBody Persona persona,@PathVariable(value = "cedula") String cedula){
         objIPersonaService.put(persona,cedula);
     }
     

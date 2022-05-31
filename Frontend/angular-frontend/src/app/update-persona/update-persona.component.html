@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-md-3" >
+    <h3>Actualizar Persona</h3>
+    <form (ngSubmit) = "onSubmit()" action="POST">
+        <div class="form-group">
+            <label>Cedula</label>
+            <input type="text" class="form-control" id="cedula" [(ngModel)] = "persona.cedula" name="cedula" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Nombres</label>
+            <input type="text" class="form-control" id="nombres" [(ngModel)] = "persona.nombres" name="nombres">
+        </div>
+
+        <div class="form-group">
+            <label>Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" [(ngModel)] = "persona.apellidos" name="apellidos">
+        </div>
+
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="text" class="form-control" id="correo" [(ngModel)] = "persona.correo" name="correo">
+        </div>
+
+        <div class="form-group">
+            <label>Telefono</label>
+            <input type="number" class="form-control" id="telefono" [(ngModel)] = "persona.telefono" name="telefono">
+        </div>
+
+        <button class="btn btn-success" type="submit">Enviar</button>
+    </form>
+</div>

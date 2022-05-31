@@ -8,6 +8,7 @@
             <th>Apellidos</th>
             <th>Correo</th>
             <th>Telefono</th>
+            <th>Accion</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,9 @@
             <td>{{persona.apellidos}}</td>
             <td>{{persona.correo}}</td>
             <td>{{persona.telefono}}</td>
+            <td><button (click)="updatePersona(persona.cedula)" class=" btn btn-info">Update</button></td>
+            <td><button  (click)="eliminarPersona(persona.cedula)" class="btn btn-danger">Eliminar</button></td>
+            <td><button  (click)="detallaPersona(persona.cedula)" class="btn btn-info">Vista</button></td>
         </tr>
     </tbody>
 </table>
